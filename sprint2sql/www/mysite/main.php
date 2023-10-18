@@ -20,7 +20,7 @@
 			// Recorrer el resultado
 			while ($row = mysqli_fetch_array($result)){
 				echo '<ul>';
-				echo '<h1><a href = "/detail.php?id='.$row[0].'">'.$row[0].'. '.$row[1].'</a></h1>';
+				echo '<h1><a href = "/detail.php?juego_id='.$row[0].'">'.$row[0].'. '.$row[1].'</a></h1>';
 				echo '<img src ='.$row[2].'></img>';
 				echo '<li>Año: '.$row[3].'</li>';
 				echo '<li>Compañía: '.$row[4].'</li>';
