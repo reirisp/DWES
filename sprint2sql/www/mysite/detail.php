@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<style>
-			// CSS para redimensionar las imágenes
+			/*CSS para redimensionar las imágenes*/
 			img{
 				width: 350px;
 				height: 200px;
@@ -44,8 +44,6 @@
 			?>
 		</ul>
 		<p>Deja un comentario:</p>
-		
-		// Formulario para añadir comentarios a los juegos
 		<form action ="/comment.php" method = "post">
 			<textarea rows = "4" cols = "50" name = "new_comment"></textarea><br>
 			<input type = "hidden" name = "juego_id" value ="<?php echo $juego_id; ?>">

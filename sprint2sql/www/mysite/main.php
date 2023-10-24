@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<style>
-			// Ponemos con CSS el tamaño que van a tener las imágenes en la web
+			/* Ponemos con CSS el tamaño que van a tener las imágenes en la web*/
 			img{
 				width: 350px;
 				height: 200px;
@@ -13,7 +13,6 @@
 		</style>
 	</head>
 	<body>
-		// Mensaje para mostrar en la pantalla que se estableció la conexión
 		<h1>Conexión establecida</h1>
 		<?php
 			// Lanzar query para que nos muestre los juegos que tenemos en nuestra BBDD
