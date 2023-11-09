@@ -39,6 +39,8 @@
                 echo '<p>Usuario no encontrado con ese email</p>';
             }
 
+            $consultaEmail->close();
+
             // Cerrar la BBDD
 			mysqli_close($db);
         ?>

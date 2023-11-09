@@ -4,23 +4,32 @@
 <html>
 	<body>
 		<?php
-			// Cargamos las variables
-			$juego_id = $_POST['juego_id'];
-			$comentario = $_POST['new_comment'];
+			// Recuperar los datos del formulario
+			session_start();
+			$user_id = NULL;
+			if (!empty($_SESSION['user_id'])) {
+				$user_id=$_SESSION['user_id'];
+			}
 
-			// Query para añadir el comentario del juego
-			$query = "INSERT INTO tComentarios (comentario, usuario_id, juego_id, fecha) VALUES ('".$comentario."', NULL, ".$juego_id.",now())";
+			$juego_id=$_POST['juego_id'];
+			$comentario=$_POST['new_comment'];
+			$mostrarFecha=date('y-m-d');
 
-			// Mensaje de error por si falla
-			mysqli_query($db, $query) or die ('Error');
+			// Query para añadir el comentario del juego con SQL Inyection
+			$consultaComentarios = $db->prepare("INSERT INTO tComentarios (comentario,usuario_id,juego_id,fecha) VALUES (?,?,?,?)");
+			$consultaComentarios->bind_param("siis",$comentario,$user_id,$juego_id,$mostrarFecha);
+			$consultaComentarios->execute();
 
-			// Creamos lo que nos muestra la pantalla
 			echo "<p>Nuevo comentario ";
 			echo mysqli_insert_id($db);
 			echo " añadido</p>";
-
+			
 			// Al enviar el comentario te lleva a la siguiente ruta
 			echo "<a href = '/detail.php?juego_id=".$juego_id."'>Volver</a>";
+			
+			$consultaComentarios->close();
+
+			// Cerrar la BBDD
 			mysqli_close($db);
 		?>
 	</body>
