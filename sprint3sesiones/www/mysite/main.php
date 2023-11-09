@@ -35,5 +35,8 @@
 		// Cerrar la BBDD
 		mysqli_close($db);
 		?>
+		<a href="/logout.php">
+    		<button>Log out</button>
+  		</a>
 	</body>
 </html>
