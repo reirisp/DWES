@@ -19,7 +19,7 @@
             if (mysqli_num_rows($resultadoConsultaEmail) > 0) {
 
                 // Si existe asignamos a una variable el resultado de la consulta
-                $only_row = mysqli_fetch_array($resultadoConsultaEmail);
+                $only_row = $resultadoConsultaEmail -> fetch_row();
                 $pv = password_verify($password_introducido, $only_row[1]);
             
                 // Comparar la contraseña de base de datos con la que el usuario introdujo en el formulario
