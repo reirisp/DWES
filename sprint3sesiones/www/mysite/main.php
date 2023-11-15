@@ -23,6 +23,18 @@
 			a {
 				transition: color 0.8s linear 0.2s;
 			}
+
+			li:hover {
+				color: red;
+			}
+
+			li > a:hover {
+				color: red;
+			}
+
+			ul:hover {
+				font-size: 30px;
+			}
 		</style>
 	</head>
 	<body>
