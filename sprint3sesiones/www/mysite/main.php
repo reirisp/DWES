@@ -10,6 +10,19 @@
 				width: 350px;
 				height: 200px;
 			}
+
+			a {
+				text-decoration: none;
+				color: blue;
+			}
+
+			a:hover {
+				color: red;
+			}
+			
+			a {
+				transition: color 0.8s linear 0.2s;
+			}
 		</style>
 	</head>
 	<body>
