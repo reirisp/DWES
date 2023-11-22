@@ -18,6 +18,8 @@
 --
 -- Table structure for table `tComentarios`
 --
+CREATE Database mysitedb;
+USE mysitedb;
 
 DROP TABLE IF EXISTS `tComentarios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
