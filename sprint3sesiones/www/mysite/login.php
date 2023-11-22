@@ -1,6 +1,6 @@
 <?php
     // Conexión con la BBDD
-    $db = mysqli_connect('localhost', 'root', '1234', 'mysitedb') or die('Fail');
+    $db = mysqli_connect('172.16.0.2', 'root', '1234', 'mysitedb') or die('Fail');
 ?>
 <html>
     <body>
